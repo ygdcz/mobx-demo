@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import loadable from '@loadable/component';
+import { HashRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+const CalculatorPage = loadable(() => import('./pages/Calculator'));
+
+const Navigation = () => (
+  <ul>
+    <li>
+      <Link to='calc'>计算</Link>
+    </li>
+  </ul>
+);
+
+const Router = () => (
+  <HashRouter>
+    <Navigation />
+    <Routes>
+      <Route path='calc' element={<CalculatorPage />}></Route>
+      <Route path='*' element={<Navigate to={'calc'} />}></Route>
+    </Routes>
+  </HashRouter>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router />
     </div>
   );
 }

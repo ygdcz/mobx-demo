@@ -1,0 +1,7 @@
+dist/*
+packages/web/dist/*
+packages/dashboard/dist/*
+
+node_modules/*
+packages/web/node_modules/*
+packages/dashboard/node_modules/*
