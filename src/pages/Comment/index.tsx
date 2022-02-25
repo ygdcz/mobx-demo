@@ -2,37 +2,24 @@ import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-d
 import useBreadcrumbs from 'hooks/breadcrumb';
 import { Avatar, Tooltip, Comment, List } from 'antd';
 import moment from 'moment';
-import React, { createElement, useState } from 'react';
+import React, { createElement, useState, useEffect } from 'react';
 import './index.module.less';
 import { observer } from 'mobx-react';
+import useLike from 'hooks/like';
 
 function CommentPage() {
   useBreadcrumbs(['comment']);
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [action, setAction] = useState<string | null>(null);
-
-  const like = () => {
-    setLikes(1);
-    setDislikes(0);
-    setAction('liked');
-  };
-
-  const dislike = () => {
-    setLikes(0);
-    setDislikes(1);
-    setAction('disliked');
-  };
+  const { likes, dislikes, doLike, doDislike, action } = useLike();
 
   const actions = [
     <Tooltip key='comment-basic-like' title='Like'>
-      <span onClick={like}>
+      <span onClick={doLike}>
         {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
         <span className='comment-action'>{likes}</span>
       </span>
     </Tooltip>,
     <Tooltip key='comment-basic-dislike' title='Dislike'>
-      <span onClick={dislike}>
+      <span onClick={doDislike}>
         {React.createElement(action === 'disliked' ? DislikeFilled : DislikeOutlined)}
         <span className='comment-action'>{dislikes}</span>
       </span>
