@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
-import useStore from '../store';
+import useStore from '../../store';
+import useBreadcrumbs from '../../hooks/breadcrumb';
 
 const Calculator = observer(() => {
   const { counter } = useStore();
+  useBreadcrumbs(['calc']);
   return (
     <>
       <p>{counter.num}</p>

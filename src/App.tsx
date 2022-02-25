@@ -1,23 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { ReactElement, ReactNode, useEffect, Component } from 'react';
 import loadable from '@loadable/component';
 import { HashRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
-const CalculatorPage = loadable(() => import('./pages/Calculator'));
-
-const Navigation = () => (
-  <ul>
-    <li>
-      <Link to='calc'>计算</Link>
-    </li>
-  </ul>
-);
+import DefaultLayout from 'layout/DefaultLayout';
+import routes from 'routes';
+const CalculatorPage = loadable(() => import('pages/Calculator'));
+const CommentPage = loadable(() => import('pages/Comment'));
+export interface IRoute {
+  path: string;
+  title: ReactElement;
+}
 
 const Router = () => (
   <HashRouter>
-    <Navigation />
-    <Routes>
-      <Route path='calc' element={<CalculatorPage />}></Route>
-      <Route path='*' element={<Navigate to={'calc'} />}></Route>
-    </Routes>
+    <DefaultLayout header={routes}>
+      <Routes>
+        <Route path='calc' element={<CalculatorPage />}></Route>
+        <Route path='comment' element={<CommentPage />}></Route>
+        <Route path='*' element={<Navigate to={'calc'} />}></Route>
+      </Routes>
+    </DefaultLayout>
   </HashRouter>
 );
 
