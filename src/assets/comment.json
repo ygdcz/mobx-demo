@@ -2,24 +2,45 @@
   "list": [
     {
       "id": 0,
-      "author": "cd",
+      "author": "jed",
       "comment": "品质好品质好品质好品质好品质好",
       "time": "2022-02-21 10:00:00",
-      "attitude": 1
+      "status": 1,
+      "like": 9,
+      "dislike": 0,
+      "parentId": 0,
+      "reply": [
+        {
+          "id": 3,
+          "author": "jack",
+          "comment": "好",
+          "time": "20222-03-02 10:57:00",
+          "status": 0,
+          "like": 0,
+          "dislike": 0,
+          "parentId": 1
+        }
+      ]
     },
     {
       "id": 1,
-      "author": "cd1",
+      "author": "jaqueline",
       "comment": "品质好1品质好1品质好1品质好1品质好1",
       "time": "2022-02-21 10:01:00",
-      "attitude": 2
+      "status": 0,
+      "like": 19,
+      "dislike": 2,
+      "parentId": 0
     },
     {
       "id": 2,
-      "author": "cd2",
+      "author": "jake",
       "comment": "品质好2品质好2品质好2品质好2品质好2",
       "time": "2022-02-20 20:02:00",
-      "attitude": 2
+      "status": -1,
+      "like": 9,
+      "dislike": 20,
+      "parentId": 0
     }
   ]
 }

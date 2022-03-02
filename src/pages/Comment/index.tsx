@@ -3,67 +3,36 @@ import useBreadcrumbs from 'hooks/breadcrumb';
 import { Avatar, Tooltip, Comment, List } from 'antd';
 import moment from 'moment';
 import React, { createElement, useState, useEffect } from 'react';
-import './index.module.less';
 import { observer } from 'mobx-react';
 import useLike from 'hooks/like';
-
+import { getCommentList } from './service/comment';
+import { IComment } from 'common/model/type';
+import CommentItem from './component/comment-item';
 function CommentPage() {
   useBreadcrumbs(['comment']);
-  const { likes, dislikes, doLike, doDislike, action } = useLike();
+  const [list, setList] = useState<IComment[]>([]);
+  useEffect(() => {
+    getCommentList().then((res) => {
+      setList(res);
+    });
+  }, []);
 
-  const actions = [
-    <Tooltip key='comment-basic-like' title='Like'>
-      <span onClick={doLike}>
-        {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
-        <span className='comment-action'>{likes}</span>
-      </span>
-    </Tooltip>,
-    <Tooltip key='comment-basic-dislike' title='Dislike'>
-      <span onClick={doDislike}>
-        {React.createElement(action === 'disliked' ? DislikeFilled : DislikeOutlined)}
-        <span className='comment-action'>{dislikes}</span>
-      </span>
-    </Tooltip>,
-    <span key='comment-basic-reply-to'>Reply to</span>
-  ];
+  const generateComments = (list: IComment[]) => {
+    return list.map((item) => {
+      return (
+        <CommentItem data={item} key={item.id}>
+          {item.reply ? generateComments(item.reply) : <></>}
+        </CommentItem>
+      );
+    });
+  };
 
   return (
-    <List>
-      <>
-        <Comment
-          actions={actions}
-          author={<a>Han Solo</a>}
-          avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
-          content={
-            <p>
-              We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create
-              their product prototypes beautifully and efficiently.
-            </p>
-          }
-          datetime={
-            <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-              <span>{moment().fromNow()}</span>
-            </Tooltip>
-          }
-        />
-        <Comment
-          actions={actions}
-          author={<a>Han Solo</a>}
-          avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
-          content={
-            <p>
-              We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create
-              their product prototypes beautifully and efficiently.
-            </p>
-          }
-          datetime={
-            <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-              <span>{moment().fromNow()}</span>
-            </Tooltip>
-          }
-        />
-      </>
-    </List>
+    <>
+      <List>
+        <>{generateComments(list)}</>
+      </List>
+    </>
   );
 }
 

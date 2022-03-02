@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import useStore from 'store';
+import React, { useEffect, useState } from 'react';
 
-const useLike = () => {
-  const { likeNum, dislikeNum } = useStore().comment;
+const useLike = (likeNum: number, dislikeNum: number, status: 'liked' | 'disliked' | null) => {
   const [likes, setLikes] = useState(likeNum);
   const [dislikes, setDislikes] = useState(dislikeNum);
-  const [action, setAction] = useState<'liked' | 'disliked' | null>(null);
+  const [action, setAction] = useState<'liked' | 'disliked' | null>(status);
+
   const [likeClicked, setLikeClicked] = useState(false);
   const [dislikeClicked, setDislikeClicked] = useState(false);
+  useEffect(() => {
+    if (action === 'liked') {
+      setLikeClicked(true);
+    } else if (action === 'disliked') {
+      setDislikeClicked(true);
+    }
+  }, [action]);
+
   const reset = () => {
     setLikeClicked(false);
     setDislikeClicked(false);

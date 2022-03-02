@@ -1,25 +1,7 @@
-import React from 'react';
-import { AppleOutlined } from '@ant-design/icons';
+const ROUTE = {
+  Root: '/',
+  Calc: '/calc',
+  Comment: '/comment'
+};
 
-const routes = [
-  {
-    path: 'calc',
-    title: (
-      <>
-        <AppleOutlined />
-        Calculator
-      </>
-    )
-  },
-  {
-    path: 'comment',
-    title: (
-      <>
-        <AppleOutlined />
-        Comment
-      </>
-    )
-  }
-];
-
-export default routes;
+export default ROUTE;
