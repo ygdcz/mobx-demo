@@ -9,12 +9,12 @@
       "like": 9,
       "dislike": 0,
       "parentId": 0,
-      "reply": [
+      "extra": [
         {
           "id": 3,
-          "author": "jack",
+          "author": "jed",
           "comment": "好",
-          "time": "20222-03-02 10:57:00",
+          "time": "2022-03-02 10:57:00",
           "status": 0,
           "like": 0,
           "dislike": 0,
@@ -23,24 +23,76 @@
       ]
     },
     {
-      "id": 1,
-      "author": "jaqueline",
-      "comment": "品质好1品质好1品质好1品质好1品质好1",
-      "time": "2022-02-21 10:01:00",
-      "status": 0,
-      "like": 19,
-      "dislike": 2,
-      "parentId": 0
+      "status": null,
+      "id": 1646214162592,
+      "author": "random",
+      "time": "2022/3/2 17:42:42",
+      "comment": "哟西",
+      "like": 0,
+      "dislike": 0
     },
     {
-      "id": 2,
-      "author": "jake",
-      "comment": "品质好2品质好2品质好2品质好2品质好2",
-      "time": "2022-02-20 20:02:00",
-      "status": -1,
-      "like": 9,
-      "dislike": 20,
-      "parentId": 0
+      "status": null,
+      "id": 1646214193971,
+      "author": "random",
+      "time": "2022/3/2 17:43:13",
+      "comment": "aa",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646214211414,
+      "author": "random",
+      "time": "2022/3/2 17:43:31",
+      "comment": "ei",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646214802050,
+      "author": "random",
+      "time": "2022/3/2 17:53:22",
+      "comment": "value",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646214815657,
+      "author": "random",
+      "time": "2022/3/2 17:53:35",
+      "comment": "1111",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646215110250,
+      "author": "random",
+      "time": "2022/3/2 17:58:30",
+      "comment": "",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646215256062,
+      "author": "random",
+      "time": "2022/3/2 18:00:56",
+      "comment": "aa",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646222652508,
+      "author": "random",
+      "time": "2022/3/2 20:04:12",
+      "comment": "好",
+      "like": 0,
+      "dislike": 0
     }
   ]
 }

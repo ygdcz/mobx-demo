@@ -5,6 +5,7 @@ import DefaultLayout from 'layout/DefaultLayout';
 import ROUTE from 'routes';
 const CalculatorPage = loadable(() => import('pages/Calculator'));
 const CommentPage = loadable(() => import('pages/Comment'));
+const FullScreenPage = loadable(() => import('pages/FullScreen'));
 export interface IRoute {
   path: string;
   title: ReactElement;
@@ -27,8 +28,10 @@ const Router = () => (
           </Layout>
         }
       >
+        <Route path='/' element={<>home</>}></Route>
         <Route path='calc' element={<CalculatorPage />}></Route>
         <Route path='comment' element={<CommentPage />}></Route>
+        <Route path='fullscreen' element={<FullScreenPage />}></Route>
         <Route path='*' element={<Navigate to={'calc'} />}></Route>
       </Route>
       {/* <DefaultLayout header={routes}>

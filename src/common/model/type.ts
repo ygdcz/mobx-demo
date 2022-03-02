@@ -6,5 +6,5 @@ export interface IComment {
   status: 'disliked' | 'liked' | null;
   like: number;
   dislike: number;
-  reply: IComment[];
+  extra?: IComment[];
 }

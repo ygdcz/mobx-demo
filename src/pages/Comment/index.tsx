@@ -1,6 +1,6 @@
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
 import useBreadcrumbs from 'hooks/breadcrumb';
-import { Avatar, Tooltip, Comment, List } from 'antd';
+import { Avatar, Tooltip, Comment, List, Empty } from 'antd';
 import moment from 'moment';
 import React, { createElement, useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
@@ -8,20 +8,20 @@ import useLike from 'hooks/like';
 import { getCommentList } from './service/comment';
 import { IComment } from 'common/model/type';
 import CommentItem from './component/comment-item';
+import AddComment from './component/add-comment';
+import useStore from 'store';
 function CommentPage() {
   useBreadcrumbs(['comment']);
-  const [list, setList] = useState<IComment[]>([]);
+  const { comment } = useStore();
   useEffect(() => {
-    getCommentList().then((res) => {
-      setList(res);
-    });
-  }, []);
+    comment.getComment();
+  }, [comment]);
 
   const generateComments = (list: IComment[]) => {
     return list.map((item) => {
       return (
         <CommentItem data={item} key={item.id}>
-          {item.reply ? generateComments(item.reply) : <></>}
+          {item.extra ? generateComments(item.extra) : <></>}
         </CommentItem>
       );
     });
@@ -30,8 +30,9 @@ function CommentPage() {
   return (
     <>
       <List>
-        <>{generateComments(list)}</>
+        <>{comment.comments.length ? generateComments(comment.comments) : <Empty description='该商品暂时没有评论' />}</>
       </List>
+      <AddComment />
     </>
   );
 }

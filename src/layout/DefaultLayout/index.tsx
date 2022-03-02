@@ -1,10 +1,11 @@
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined, CalculatorFilled, CommentOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined, NotificationOutlined, CalculatorFilled, CommentOutlined, FullscreenOutlined } from '@ant-design/icons';
 import React, { memo, ReactNode } from 'react';
 import { IRoute } from 'App';
 import { Link, Outlet } from 'react-router-dom';
 import useStore from 'store';
 import ROUTE from 'routes';
+import { observer } from 'mobx-react-lite';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 interface IMenu {
@@ -23,6 +24,11 @@ const ALL_MENUS: IMenu[] = [
     title: '评论',
     icon: <CommentOutlined />,
     link: ROUTE.Comment
+  },
+  {
+    title: '全屏',
+    icon: <FullscreenOutlined />,
+    link: ROUTE.FullScreen
   }
 ];
 
@@ -45,9 +51,9 @@ const DefaultLayout = (props: { children: ReactNode }) => {
       </Header>
       <Content style={{ padding: '0 50px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
-          {breadcrumbs.map((b) => (
-            <Breadcrumb.Item key={b.link + b.title}>{b.link ? <Link to={b.link}>{b.title}</Link> : b.title}</Breadcrumb.Item>
-          ))}
+          {breadcrumbs.map((b) => {
+            return <Breadcrumb.Item key={b.link + b.title}>{b.link ? <Link to={b.link}>{b.title}</Link> : b.title}</Breadcrumb.Item>;
+          })}
         </Breadcrumb>
         <Layout className='site-layout-background' style={{ padding: '24px 0' }}>
           <Content style={{ padding: '0 24px', minHeight: 280 }}>{<Outlet />}</Content>
@@ -57,4 +63,4 @@ const DefaultLayout = (props: { children: ReactNode }) => {
   );
 };
 
-export default memo(DefaultLayout);
+export default memo(observer(DefaultLayout));

@@ -16,7 +16,6 @@ function makeBreadcrumbs(breadcrumbs: IBreadcrumb[]): IBreadcrumbObject[] {
 
 const useBreadcrumbs = (newBreadcrumbs: IBreadcrumb[]) => {
   const { setBreadcrumbs } = useStore().breadcrumb;
-
   const _newBreadcrumbs = makeBreadcrumbs(newBreadcrumbs);
 
   useMount(() => {
