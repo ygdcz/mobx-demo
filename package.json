@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "sass": "^1.49.9",
     "@ant-design/icons": "^4.7.0",
     "@bixi-design/lint": "^1.7.4",
     "@loadable/component": "^5.15.2",
@@ -54,6 +55,7 @@
   "devDependencies": {
     "@types/loadable__component": "^5.13.4",
     "@types/lodash-es": "^4.17.6",
-    "@types/utif": "^3.0.1"
+    "@types/utif": "^3.0.1",
+    "node-sass": "^7.0.1"
   }
 }

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 const useLike = (likeNum: number, dislikeNum: number, status: 'liked' | 'disliked' | null) => {
   const [likes, setLikes] = useState(likeNum);
   const [dislikes, setDislikes] = useState(dislikeNum);
   const [action, setAction] = useState<'liked' | 'disliked' | null>(status);
-
   const [likeClicked, setLikeClicked] = useState(false);
   const [dislikeClicked, setDislikeClicked] = useState(false);
   useEffect(() => {

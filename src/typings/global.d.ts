@@ -18,6 +18,8 @@ declare module '*.jpeg';
 declare module '*.gif';
 declare module '*.bmp';
 declare module '*.tiff';
+declare module '*.css';
+declare module '*.less';
 
 interface IConfig {
   web_url: string;

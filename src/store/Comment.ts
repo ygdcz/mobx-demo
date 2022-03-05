@@ -2,10 +2,11 @@ import { message } from 'antd';
 import { IComment } from 'common/model/type';
 import { reverse } from 'lodash-es';
 import { makeAutoObservable, runInAction } from 'mobx';
-import { addComment, getCommentList } from 'pages/Comment/service/comment';
+import { addComment, deleteComment, getCommentList, updateComment, updateLike } from 'pages/Comment/service/comment';
 
 class Comment {
   comments: IComment[] = [];
+  loading = false;
   constructor() {
     makeAutoObservable(
       this,
@@ -28,15 +29,44 @@ class Comment {
       });
   };
   addComment = (comment: string) => {
-    addComment(comment)
+    const res = addComment(comment)
       .then((res) => {
-        message.success('评论成功');
         runInAction(() => {
           this.comments.unshift(res);
         });
+        return Promise.resolve(res);
       })
-      .catch((err) => message.error('评论失败'));
-    return Promise.resolve();
+      .catch((err) => Promise.reject(err));
+    return res;
+  };
+  deleteComment = (id: number) => {
+    deleteComment(id)
+      .then((res) => {
+        message.success('删除成功');
+        runInAction(() => {
+          this.comments = this.comments.filter((comment) => comment.id !== id);
+        });
+      })
+      .catch((err) => message.error('删除失败'));
+  };
+  updateComment = (id: number, comment: Partial<IComment>) => {
+    this.loading = true;
+    updateComment(id, comment)
+      .then((res) => {
+        message.success('更新成功');
+        this.loading = false;
+      })
+      .catch((err) => message.error('更新失败'));
+  };
+  updateLike = (id: number, comment: Partial<IComment>) => {
+    this.loading = true;
+    console.log(comment);
+
+    updateLike(id, comment)
+      .then((res) => {
+        this.loading = false;
+      })
+      .catch((err) => message.error('点赞失败'));
   };
 }
 

@@ -1,4 +1,4 @@
-import { Comment, Avatar, Form, Button, List, Input } from 'antd';
+import { Comment, Avatar, Form, Button, List, Input, message, Divider } from 'antd';
 import moment from 'moment';
 import { IComment } from 'common/model/type';
 import React, { useState, ReactNode, ChangeEvent } from 'react';
@@ -39,11 +39,17 @@ const AddComment = () => {
     if (!value) {
       return;
     }
-    setSubmitting({ delay: 1000 });
-    comment.addComment(value).then((res) => {
-      setSubmitting(false);
-      setValue('');
-    });
+    setSubmitting(true);
+    setTimeout(() => {
+      comment
+        .addComment(value)
+        .then((res) => {
+          setValue('');
+          setSubmitting(false);
+          message.success('评论成功');
+        })
+        .catch((err) => message.error('评论失败'));
+    }, 1000);
   };
 
   const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -51,65 +57,16 @@ const AddComment = () => {
   };
 
   return (
-    <Comment
-      avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
-      content={<Editor onChange={onChange} onSubmit={onSubmit} submitting={submitting} value={value} />}
-    />
+    <>
+      <Divider orientation='left' plain>
+        填写你的评论
+      </Divider>
+      <Comment
+        avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
+        content={<Editor onChange={onChange} onSubmit={onSubmit} submitting={submitting} value={value} />}
+      />
+    </>
   );
 };
-
-// class AddComment extends React.Component {
-//   state = {
-//     comments: [],
-//     submitting: false,
-//     value: ''
-//   };
-
-//   handleSubmit = () => {
-//     if (!this.state.value) {
-//       return;
-//     }
-
-//     this.setState({
-//       submitting: true
-//     });
-
-//     setTimeout(() => {
-//       this.setState({
-//         submitting: false,
-//         value: '',
-//         comments: [
-//           ...this.state.comments,
-//           {
-//             author: 'Han Solo',
-//             avatar: 'https://joeschmoe.io/api/v1/random',
-//             content: <p>{this.state.value}</p>,
-//             datetime: moment().fromNow()
-//           }
-//         ]
-//       });
-//     }, 1000);
-//   };
-
-//   handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-//     this.setState({
-//       value: e.target.value
-//     });
-//   };
-
-//   render() {
-//     const { comments, submitting, value } = this.state;
-
-//     return (
-//       <>
-//         {comments.length > 0 && <CommentList comments={comments} />}
-//         <Comment
-//           avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
-//           content={<Editor onChange={this.handleChange} onSubmit={this.handleSubmit} submitting={submitting} value={value} />}
-//         />
-//       </>
-//     );
-//   }
-// }
 
 export default observer(AddComment);

@@ -1,96 +1,61 @@
 {
   "list": [
     {
-      "id": 0,
+      "id": 1,
       "author": "jed",
-      "comment": "品质好品质好品质好品质好品质好",
-      "time": "2022-02-21 10:00:00",
+      "comment": "品质好品质好品质好品质好",
+      "time": "2022/3/4 17:41:11",
       "status": 1,
-      "like": 9,
+      "like": 10,
       "dislike": 0,
-      "parentId": 0,
-      "extra": [
-        {
-          "id": 3,
-          "author": "jed",
-          "comment": "好",
-          "time": "2022-03-02 10:57:00",
-          "status": 0,
-          "like": 0,
-          "dislike": 0,
-          "parentId": 1
-        }
-      ]
+      "parentId": null,
+      "extra": []
+    },
+    {
+      "id": 3,
+      "author": "jed",
+      "comment": "好1111",
+      "time": "2022/3/5 14:39:58",
+      "status": 1,
+      "like": 1,
+      "dislike": 0,
+      "parentId": 1,
+      "extra": []
     },
     {
       "status": null,
-      "id": 1646214162592,
+      "id": 1646462406572,
       "author": "random",
-      "time": "2022/3/2 17:42:42",
-      "comment": "哟西",
+      "time": "2022/3/5 14:40:06",
+      "comment": "aaa",
+      "like": 0,
+      "dislike": 0,
+      "extra": []
+    },
+    {
+      "status": null,
+      "id": 1646462574260,
+      "author": "random",
+      "time": "2022/3/5 14:42:54",
+      "comment": "完成评论组件模块🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉",
       "like": 0,
       "dislike": 0
     },
     {
       "status": null,
-      "id": 1646214193971,
+      "id": 1646462598819,
       "author": "random",
-      "time": "2022/3/2 17:43:13",
-      "comment": "aa",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646214211414,
-      "author": "random",
-      "time": "2022/3/2 17:43:31",
-      "comment": "ei",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646214802050,
-      "author": "random",
-      "time": "2022/3/2 17:53:22",
-      "comment": "value",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646214815657,
-      "author": "random",
-      "time": "2022/3/2 17:53:35",
-      "comment": "1111",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646215110250,
-      "author": "random",
-      "time": "2022/3/2 17:58:30",
-      "comment": "",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646215256062,
-      "author": "random",
-      "time": "2022/3/2 18:00:56",
-      "comment": "aa",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646222652508,
-      "author": "random",
-      "time": "2022/3/2 20:04:12",
+      "time": "2022/3/5 14:43:18",
       "comment": "好",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646462616908,
+      "author": "random",
+      "time": "2022/3/5 14:43:36",
+      "comment": "红牌",
       "like": 0,
       "dislike": 0
     }

@@ -11,7 +11,7 @@ import CommentItem from './component/comment-item';
 import AddComment from './component/add-comment';
 import useStore from 'store';
 function CommentPage() {
-  useBreadcrumbs(['comment']);
+  useBreadcrumbs(['评论区']);
   const { comment } = useStore();
   useEffect(() => {
     comment.getComment();
@@ -27,11 +27,33 @@ function CommentPage() {
     });
   };
 
+  const formatCommentList = (list: IComment[]) => {
+    const deleteIds: number[] = [];
+    list.forEach((item) => {
+      if (item.parentId) {
+        list[list.findIndex((i) => i.id === item.parentId)].extra.push(item);
+
+        deleteIds.push(item.id);
+      }
+    });
+
+    return list.filter((item) => {
+      if (!deleteIds.length) return true;
+      return !(deleteIds.indexOf(item.id) > -1);
+    });
+  };
+
   return (
     <>
-      <List>
-        <>{comment.comments.length ? generateComments(comment.comments) : <Empty description='该商品暂时没有评论' />}</>
-      </List>
+      <List
+        pagination={{ pageSize: 3 }}
+        dataSource={formatCommentList(comment.comments)}
+        renderItem={(item) => (
+          <CommentItem data={item} key={item.id}>
+            {item.extra ? generateComments(item.extra) : <></>}
+          </CommentItem>
+        )}
+      />
       <AddComment />
     </>
   );
