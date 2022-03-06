@@ -1,0 +1,35 @@
+.good-item {
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .price {
+    color: red;
+    font-size: 26px;
+
+    .price-rest {
+      font-size: 20px;
+    }
+    .price-unit {
+      color: rgb(175, 173, 173);
+      font-size: 20px;
+    }
+  }
+
+  :global {
+    .ant-card-cover {
+      .ant-image {
+        & > img {
+          max-height: 240px;
+        }
+      }
+    }
+    .ant-card-actions {
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

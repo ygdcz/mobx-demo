@@ -1,5 +1,13 @@
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined, CalculatorFilled, CommentOutlined, FullscreenOutlined } from '@ant-design/icons';
+import {
+  UserOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+  CalculatorFilled,
+  CommentOutlined,
+  FullscreenOutlined,
+  ShopOutlined
+} from '@ant-design/icons';
 import React, { memo, ReactNode } from 'react';
 import { IRoute } from 'App';
 import { Link, Outlet } from 'react-router-dom';
@@ -29,6 +37,11 @@ const ALL_MENUS: IMenu[] = [
     title: '全屏',
     icon: <FullscreenOutlined />,
     link: ROUTE.FullScreen
+  },
+  {
+    title: '商品',
+    icon: <ShopOutlined />,
+    link: ROUTE.Good
   }
 ];
 
@@ -56,7 +69,7 @@ const DefaultLayout = (props: { children: ReactNode }) => {
           })}
         </Breadcrumb>
         <Layout className='site-layout-background' style={{ padding: '24px 0' }}>
-          <Content style={{ padding: '0 24px', minHeight: 280 }}>{<Outlet />}</Content>
+          <Content style={{ padding: '0 24px', minHeight: '100vh' }}>{<Outlet />}</Content>
         </Layout>
       </Content>
     </Layout>

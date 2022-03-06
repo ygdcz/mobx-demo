@@ -1,0 +1,273 @@
+{
+  "comment": [
+    {
+      "id": 1,
+      "author": "jed",
+      "comment": "品质好品质好品质好品质好",
+      "time": "2022/3/4 17:41:11",
+      "status": 1,
+      "like": 10,
+      "dislike": 0,
+      "parentId": null,
+      "extra": []
+    },
+    {
+      "id": 3,
+      "author": "jed",
+      "comment": "好1111",
+      "time": "2022/3/5 14:39:58",
+      "status": 1,
+      "like": 1,
+      "dislike": 0,
+      "parentId": 1,
+      "extra": []
+    },
+    {
+      "status": null,
+      "id": 1646462406572,
+      "author": "random",
+      "time": "2022/3/5 14:40:06",
+      "comment": "aaa",
+      "like": 0,
+      "dislike": 0,
+      "extra": []
+    },
+    {
+      "status": 0,
+      "id": 1646462574260,
+      "author": "random",
+      "time": "2022/3/5 14:42:54",
+      "comment": "完成评论组件模块🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646462598819,
+      "author": "random",
+      "time": "2022/3/5 14:43:18",
+      "comment": "好",
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "status": null,
+      "id": 1646462616908,
+      "author": "random",
+      "time": "2022/3/5 14:43:36",
+      "comment": "红牌",
+      "like": 0,
+      "dislike": 0
+    }
+  ],
+  "good": [
+    {
+      "id": 0,
+      "name": "上海红颜草莓大果1kg礼盒",
+      "description": [
+        "个大柔嫩",
+        "优良产地"
+      ],
+      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg",
+      "price": 79,
+      "num": 39,
+      "status": 1,
+      "limitation": null,
+      "unit": "箱",
+      "category": "Fruit"
+    },
+    {
+      "id": 1,
+      "name": "沃柑 900g",
+      "description": [
+        "广西南宁",
+        "脆甜化渣"
+      ],
+      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg",
+      "price": 19.9,
+      "num": 50,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 2,
+      "name": "【国产之光】云南即时牛油果巨无霸2个装480g",
+      "description": [
+        "干物质高",
+        "绵糯醇香"
+      ],
+      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg",
+      "price": 29.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 3,
+      "name": "云南超大蓝莓125g(18mm)",
+      "description": [
+        "超大果才过瘾"
+      ],
+      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg",
+      "price": 39.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 4,
+      "name": "原味+伯爵味瑞士卷8片分享装600g",
+      "description": [
+        "奶油蛋糕卷，松软嫩滑，清新醇香红茶卷，采用斯里兰卡红茶制作，口感软嫩细腻"
+      ],
+      "img_url": "https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667",
+      "price": 39.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Dairy"
+    },
+    {
+      "id": 5,
+      "name": "生牛乳巧克力奶",
+      "description": [
+        "优选生牛乳"
+      ],
+      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg",
+      "price": 10.8,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Dairy",
+      "keyword": "冷藏"
+    },
+    {
+      "id": 6,
+      "name": "安牧 山羊奶 250ml*12",
+      "description": [
+        "优选生牛乳"
+      ],
+      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg",
+      "price": 59.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "提",
+      "category": "Dairy",
+      "keyword": "特价",
+      "originPrice": 88
+    },
+    {
+      "id": 7,
+      "name": "上海红颜草莓大果1kg礼盒",
+      "description": [
+        "个大柔嫩",
+        "优良产地"
+      ],
+      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg",
+      "price": 79,
+      "num": 39,
+      "status": 1,
+      "limitation": null,
+      "unit": "箱",
+      "category": "Fruit"
+    },
+    {
+      "id": 8,
+      "name": "沃柑 900g",
+      "description": [
+        "广西南宁",
+        "脆甜化渣"
+      ],
+      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg",
+      "price": 19.9,
+      "num": 50,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 9,
+      "name": "【国产之光】云南即时牛油果巨无霸2个装480g",
+      "description": [
+        "干物质高",
+        "绵糯醇香"
+      ],
+      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg",
+      "price": 29.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 10,
+      "name": "云南超大蓝莓125g(18mm)",
+      "description": [
+        "超大果才过瘾"
+      ],
+      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg",
+      "price": 39.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Fruit"
+    },
+    {
+      "id": 11,
+      "name": "原味+伯爵味瑞士卷8片分享装600g",
+      "description": [
+        "奶油蛋糕卷，松软嫩滑，清新醇香红茶卷，采用斯里兰卡红茶制作，口感软嫩细腻"
+      ],
+      "img_url": "https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667",
+      "price": 39.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Dairy"
+    },
+    {
+      "id": 12,
+      "name": "生牛乳巧克力奶",
+      "description": [
+        "优选生牛乳"
+      ],
+      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg",
+      "price": 10.8,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "盒",
+      "category": "Dairy",
+      "keyword": "冷藏"
+    },
+    {
+      "id": 13,
+      "name": "安牧 山羊奶 250ml*12",
+      "description": [
+        "优选生牛乳"
+      ],
+      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg",
+      "price": 59.9,
+      "num": 100,
+      "status": 1,
+      "limitation": null,
+      "unit": "提",
+      "category": "Dairy",
+      "keyword": "特价",
+      "originPrice": 88
+    }
+  ]
+}

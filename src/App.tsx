@@ -6,6 +6,7 @@ import ROUTE from 'routes';
 const CalculatorPage = loadable(() => import('pages/Calculator'));
 const CommentPage = loadable(() => import('pages/Comment'));
 const FullScreenPage = loadable(() => import('pages/FullScreen'));
+const GoodPage = loadable(() => import('pages/Goods'));
 export interface IRoute {
   path: string;
   title: ReactElement;
@@ -33,6 +34,7 @@ const Router = () => (
         <Route path='comment' element={<CommentPage />}></Route>
         <Route path='fullscreen' element={<FullScreenPage />}></Route>
         <Route path='*' element={<Navigate to={'calc'} />}></Route>
+        <Route path='good' element={<GoodPage />}></Route>
       </Route>
       {/* <DefaultLayout header={routes}>
         <

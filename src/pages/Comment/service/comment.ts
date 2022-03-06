@@ -8,7 +8,7 @@ const ACTION = {
 };
 
 export const getCommentList = async (): Promise<IComment[]> => {
-  const res = await $http.get<ISafeAny[]>('/list');
+  const res = await $http.get<ISafeAny[]>('/comment');
   return get(res, 'data', []).map((data) => ({
     ...data,
     status: data.status === 1 ? 'liked' : data.status === -1 ? 'disliked' : null
@@ -25,20 +25,20 @@ export const addComment = async (comment: string): Promise<IComment> => {
     like: 0,
     dislike: 0
   };
-  const res = await $http.post<IComment>('/list', newComment);
+  const res = await $http.post<IComment>('/comment', newComment);
   return get(res, 'data');
 };
 
 export const deleteComment = async (id: number) => {
-  await $http.delete(`/list/${id}`);
+  await $http.delete(`/comment/${id}`);
 };
 
 export const updateComment = async (id: number, comment: Partial<IComment>) => {
-  await $http.patch(`/list/${id}`, comment);
+  await $http.patch(`/comment/${id}`, comment);
 };
 
 export const updateLike = async (id: number, like: Partial<IComment>) => {
   const _comment = like.status === null ? 0 : ACTION[like.status!];
 
-  await $http.patch(`/list/${id}`, { ...like, status: _comment });
+  await $http.patch(`/comment/${id}`, { ...like, status: _comment });
 };
