@@ -1,38 +1,6 @@
 {
   "comment": [
     {
-      "id": 1,
-      "author": "jed",
-      "comment": "品质好品质好品质好品质好",
-      "time": "2022/3/4 17:41:11",
-      "status": 1,
-      "like": 10,
-      "dislike": 0,
-      "parentId": null,
-      "extra": []
-    },
-    {
-      "id": 3,
-      "author": "jed",
-      "comment": "好1111",
-      "time": "2022/3/5 14:39:58",
-      "status": 1,
-      "like": 1,
-      "dislike": 0,
-      "parentId": 1,
-      "extra": []
-    },
-    {
-      "status": null,
-      "id": 1646462406572,
-      "author": "random",
-      "time": "2022/3/5 14:40:06",
-      "comment": "aaa",
-      "like": 0,
-      "dislike": 0,
-      "extra": []
-    },
-    {
       "status": 0,
       "id": 1646462574260,
       "author": "random",
@@ -43,19 +11,10 @@
     },
     {
       "status": null,
-      "id": 1646462598819,
+      "id": 1646566197095,
       "author": "random",
-      "time": "2022/3/5 14:43:18",
-      "comment": "好",
-      "like": 0,
-      "dislike": 0
-    },
-    {
-      "status": null,
-      "id": 1646462616908,
-      "author": "random",
-      "time": "2022/3/5 14:43:36",
-      "comment": "红牌",
+      "time": "2022/3/6 19:29:57",
+      "comment": "完成商品展示组件模块80%🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n",
       "like": 0,
       "dislike": 0
     }

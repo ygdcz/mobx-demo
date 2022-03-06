@@ -12,7 +12,7 @@ const Goods = () => {
   const { loading, getMoreGoods, total, goodCategory } = good;
   const [page, setPage] = useState(2);
   useEffect(() => {
-    good.getGoodsByCateGory('All');
+    good.getGoodsByCateGory(goodCategory);
   }, []);
 
   const loadMoreData = () => {

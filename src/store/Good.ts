@@ -20,7 +20,7 @@ class Good {
   }
 
   setGoodCategory(value: GOOD_CATEGORY | 'All') {
-    this.goodCategory = value;
+    runInAction(() => (this.goodCategory = value));
   }
 
   getMoreGoods(page: number, category: GOOD_CATEGORY | 'All') {

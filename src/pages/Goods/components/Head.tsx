@@ -27,7 +27,7 @@ const Head = ({ goods }: IProps) => {
     </TabPane>
   );
   return (
-    <Tabs onChange={(activeKey) => setGoodCategory(activeKey as GOOD_CATEGORY | 'All')}>
+    <Tabs centered onChange={(activeKey) => setGoodCategory(activeKey as GOOD_CATEGORY | 'All')} activeKey={goodCategory}>
       {Object.keys(CATEGORY).map((category) => tab(category as GOOD_CATEGORY, goods))}
     </Tabs>
   );
