@@ -65,7 +65,7 @@ const DefaultLayout = (props: { children: ReactNode }) => {
       <Content style={{ padding: '0 50px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
           {breadcrumbs.map((b) => {
-            return <Breadcrumb.Item key={b.link + b.title}>{b.link ? <Link to={b.link}>{b.title}</Link> : b.title}</Breadcrumb.Item>;
+            return <Breadcrumb.Item key={b.link + b.title}>{b.link ? <Link to={b.link}>{b.title}</Link> : <h1>{b.title}</h1>}</Breadcrumb.Item>;
           })}
         </Breadcrumb>
         <Layout className='site-layout-background' style={{ padding: '24px 0' }}>

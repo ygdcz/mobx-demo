@@ -11,8 +11,8 @@ import CommentItem from './component/comment-item';
 import AddComment from './component/add-comment';
 import useStore from 'store';
 function CommentPage() {
-  useBreadcrumbs(['评论区']);
   const { comment } = useStore();
+  useBreadcrumbs([`${comment.comments.length}条评论`]);
   useEffect(() => {
     comment.getComment();
   }, [comment]);
