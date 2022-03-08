@@ -12,7 +12,7 @@ import AddComment from './component/add-comment';
 import useStore from 'store';
 function CommentPage() {
   const { comment } = useStore();
-  useBreadcrumbs([`${comment.comments.length}条评论`]);
+  useBreadcrumbs(['评论区']);
   useEffect(() => {
     comment.getComment();
   }, [comment]);
@@ -32,7 +32,6 @@ function CommentPage() {
     list.forEach((item) => {
       if (item.parentId) {
         list[list.findIndex((i) => i.id === item.parentId)].extra.push(item);
-
         deleteIds.push(item.id);
       }
     });
@@ -46,6 +45,7 @@ function CommentPage() {
   return (
     <>
       <List
+        header={`${comment.Total}条评论`}
         pagination={{ pageSize: 3 }}
         dataSource={formatCommentList(comment.comments)}
         renderItem={(item) => (
@@ -53,6 +53,7 @@ function CommentPage() {
             {item.extra ? generateComments(item.extra) : <></>}
           </CommentItem>
         )}
+        locale={{ emptyText: '暂无评论' }}
       />
       <AddComment />
     </>

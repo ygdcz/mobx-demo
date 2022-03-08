@@ -10,10 +10,12 @@ import {
 } from '@ant-design/icons';
 import React, { memo, ReactNode } from 'react';
 import { IRoute } from 'App';
+import './index.module.scss';
 import { Link, Outlet } from 'react-router-dom';
 import useStore from 'store';
 import ROUTE from 'routes';
 import { observer } from 'mobx-react-lite';
+import PortalLayout from 'layout/PortalLayout';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 interface IMenu {
@@ -60,6 +62,9 @@ const DefaultLayout = (props: { children: ReactNode }) => {
               </Menu.Item>
             ))}
           </>
+          <Menu.Item key='user' style={{ position: 'absolute', right: 100 }}>
+            {<PortalLayout />}
+          </Menu.Item>
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px' }}>

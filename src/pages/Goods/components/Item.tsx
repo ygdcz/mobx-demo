@@ -12,7 +12,7 @@ interface IGoodItem {
 }
 
 const GoodItem = ({ item }: IGoodItem) => {
-  const { good } = useStore();
+  const { good, cart } = useStore();
   const { loading } = good;
   const description = item.keyword ? (
     <>
@@ -40,7 +40,7 @@ const GoodItem = ({ item }: IGoodItem) => {
         loading={loading}
         style={{ width: 260, marginTop: 45 }}
         cover={<Image src={item.img_url} />}
-        actions={[price, <ShoppingCartOutlined key='purchase' style={{ fontSize: 26 }} />]}
+        actions={[price, <ShoppingCartOutlined key='purchase' style={{ fontSize: 26 }} onClick={cart.addCart} />]}
       >
         <Meta title={item.name} description={description} />
       </Card>

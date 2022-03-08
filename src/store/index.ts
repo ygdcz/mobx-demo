@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import breadcrumb from './Breadcrumb';
+import cart from './Cart';
 import comment from './Comment';
 import counter from './Counter';
 import good from './Good';
@@ -9,6 +10,7 @@ class RootStore {
   breadcrumb = breadcrumb;
   comment = comment;
   good = good;
+  cart = cart;
 }
 
 const store = new RootStore();

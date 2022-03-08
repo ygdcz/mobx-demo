@@ -1,7 +1,7 @@
 import useBreadcrumbs from 'hooks/breadcrumb';
 import React, { useCallback } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-import './index.module.less';
+import styles from './index.module.scss';
 
 function FullScreenTest() {
   useBreadcrumbs(['全屏']);
@@ -27,7 +27,7 @@ function FullScreenTest() {
       <button onClick={screen2.enter}>Second</button>
 
       <FullScreen handle={screen1} onChange={reportChange}>
-        <div className='full-screenable-node' style={{ background: 'red' }}>
+        <div style={{ background: 'red', height: '100%' }}>
           First
           <button onClick={screen2.enter}>Switch</button>
           <button onClick={screen1.exit}>Exit</button>

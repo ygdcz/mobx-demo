@@ -1,5 +1,5 @@
 import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
-import { Avatar, Tooltip, Comment, List, Button, Input, Space } from 'antd';
+import { Avatar, Tooltip, Comment, List, Button, Input, Space, Typography, Popconfirm } from 'antd';
 import moment from 'moment';
 import React, { createElement, useState, useEffect, ReactNode, ChangeEvent, useCallback } from 'react';
 import './index.module.less';
@@ -20,6 +20,7 @@ function CommentItem(props: IProps) {
   const { comment: commentStore } = useStore();
   const [value, setValue] = useState(comment);
   const [isUpdate, setIsUpdate] = useState(false);
+  const { Paragraph } = Typography;
 
   const likeAndDislike = useCallback(() => {
     commentStore.updateLike(id, {
@@ -58,9 +59,18 @@ function CommentItem(props: IProps) {
         <span className='comment-action'>{dislikes}</span>
       </span>
     </Tooltip>,
-    <Button type='link' key='comment-basic-delete' onClick={() => commentStore.deleteComment(id)}>
-      删除
-    </Button>,
+    <Popconfirm
+      key='delete'
+      placement='top'
+      title={'你确定要删除这条评论吗?'}
+      onConfirm={() => commentStore.deleteComment(id)}
+      okText='确定'
+      cancelText='取消'
+    >
+      <Button type='link' key='comment-basic-delete'>
+        删除
+      </Button>
+    </Popconfirm>,
     isUpdate ? (
       <Space>
         <Button type='link' style={{ color: 'gray' }} onClick={() => setIsUpdate(false)}>
@@ -103,7 +113,7 @@ function CommentItem(props: IProps) {
       actions={actions}
       author={<a>{author}</a>}
       avatar={<Avatar src={`https://joeschmoe.io/api/v1/${author}`} alt={author} />}
-      content={isUpdate ? <Input value={value} onChange={onChange} /> : <span>{value}</span>}
+      content={isUpdate ? <Input value={value} onChange={onChange} maxLength={64} /> : <Paragraph copyable>{value}</Paragraph>}
       datetime={
         <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
           <span>{moment(time).fromNow()}</span>

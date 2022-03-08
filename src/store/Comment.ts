@@ -16,6 +16,10 @@ class Comment {
       { autoBind: true } // 自动绑定this
     );
   }
+  get Total() {
+    return this.comments.length;
+  }
+
   getComment = () => {
     getCommentList()
       .then((res) => {
