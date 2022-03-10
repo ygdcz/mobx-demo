@@ -27,7 +27,7 @@
         "个大柔嫩",
         "优良产地"
       ],
-      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg",
+      "img_url": ["https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg", "https://img13.360buyimg.com/n1/jfs/t1/200683/24/13348/93189/617663edEc65ac3bb/62220a9d1c388e03.jpg"],
       "price": 79,
       "num": 39,
       "status": 1,
@@ -42,7 +42,7 @@
         "广西南宁",
         "脆甜化渣"
       ],
-      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg",
+      "img_url": ["https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg", "https://img13.360buyimg.com/n1/jfs/t1/200683/24/13348/93189/617663edEc65ac3bb/62220a9d1c388e03.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 19.9,
       "num": 50,
       "status": 1,
@@ -57,7 +57,7 @@
         "干物质高",
         "绵糯醇香"
       ],
-      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg",
+      "img_url": ["https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 29.9,
       "num": 100,
       "status": 1,
@@ -71,7 +71,7 @@
       "description": [
         "超大果才过瘾"
       ],
-      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg",
+      "img_url": ["https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 39.9,
       "num": 100,
       "status": 1,
@@ -85,7 +85,7 @@
       "description": [
         "奶油蛋糕卷，松软嫩滑，清新醇香红茶卷，采用斯里兰卡红茶制作，口感软嫩细腻"
       ],
-      "img_url": "https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667",
+      "img_url": ["https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 39.9,
       "num": 100,
       "status": 1,
@@ -99,7 +99,7 @@
       "description": [
         "优选生牛乳"
       ],
-      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg",
+      "img_url": ["https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 10.8,
       "num": 100,
       "status": 1,
@@ -114,7 +114,7 @@
       "description": [
         "优选生牛乳"
       ],
-      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg",
+      "img_url": ["https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 59.9,
       "num": 100,
       "status": 1,
@@ -131,7 +131,7 @@
         "个大柔嫩",
         "优良产地"
       ],
-      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg",
+      "img_url": ["https://img14.360buyimg.com/n7/jfs/t1/219542/12/3210/493807/6183f6f2E57ce63c1/45f52c677c995ac5.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 79,
       "num": 39,
       "status": 1,
@@ -146,7 +146,7 @@
         "广西南宁",
         "脆甜化渣"
       ],
-      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg",
+      "img_url": ["https://img12.360buyimg.com/n7/jfs/t1/191694/11/1250/100366/6090ac71E2ad842c2/053e298458224a60.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 19.9,
       "num": 50,
       "status": 1,
@@ -161,7 +161,7 @@
         "干物质高",
         "绵糯醇香"
       ],
-      "img_url": "https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg",
+      "img_url": ["https://img14.360buyimg.com/n7/jfs/t1/125500/38/23267/692040/62061d67Ec4cf9d66/c2ac0a6c982c0e0e.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 29.9,
       "num": 100,
       "status": 1,
@@ -175,7 +175,7 @@
       "description": [
         "超大果才过瘾"
       ],
-      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg",
+      "img_url": ["https://img13.360buyimg.com/n7/jfs/t1/161479/29/17802/131296/6072a661E95085d0b/5c1cd4cc583c4d50.jpg", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 39.9,
       "num": 100,
       "status": 1,
@@ -189,7 +189,7 @@
       "description": [
         "奶油蛋糕卷，松软嫩滑，清新醇香红茶卷，采用斯里兰卡红茶制作，口感软嫩细腻"
       ],
-      "img_url": "https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667",
+      "img_url": ["https://img2.baidu.com/it/u=2385989687,3847877901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=667", "https://img13.360buyimg.com/n1/jfs/t1/170647/29/2510/130344/5ffeab9aE116e8fe2/7bfbe840aa4c9fa0.jpg"],
       "price": 39.9,
       "num": 100,
       "status": 1,
@@ -203,7 +203,7 @@
       "description": [
         "优选生牛乳"
       ],
-      "img_url": "https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg",
+      "img_url": ["https://img12.360buyimg.com/n7/jfs/t1/98853/18/24647/126062/62203f36E204ad337/50d323936fc2199b.jpg"],
       "price": 10.8,
       "num": 100,
       "status": 1,
@@ -218,7 +218,7 @@
       "description": [
         "优选生牛乳"
       ],
-      "img_url": "https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg",
+      "img_url": ["https://img13.360buyimg.com/n7/jfs/t1/204174/38/9668/163103/615bac43E9f143e10/3be35f808b861c77.jpg"],
       "price": 59.9,
       "num": 100,
       "status": 1,

@@ -14,7 +14,7 @@ export interface IGood {
   id: number;
   name: string;
   description?: string[];
-  img_url: string;
+  img_url: string[];
   price: number;
   num: number;
   status: number;

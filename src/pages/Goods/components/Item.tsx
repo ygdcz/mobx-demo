@@ -7,6 +7,7 @@ import { IGood } from '../models';
 import styles from '../index.module.scss';
 import { toString } from 'lodash-es';
 import { ShoppingCartOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 interface IGoodItem {
   item: IGood;
 }
@@ -14,6 +15,7 @@ interface IGoodItem {
 const GoodItem = ({ item }: IGoodItem) => {
   const { good, cart } = useStore();
   const { loading } = good;
+  const navigate = useNavigate();
   const description = item.keyword ? (
     <>
       <Tag color='blue'>{item.keyword}</Tag>
@@ -32,15 +34,33 @@ const GoodItem = ({ item }: IGoodItem) => {
       <span className={styles['price-unit']}>/{item.unit}</span>
     </span>
   );
+  const GoToDetail = (id: number) => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
-    <div className={styles['good-item']}>
+    <div
+      className={styles['good-item']}
+      onClick={() => {
+        GoToDetail(item.id);
+      }}
+    >
       <Card
         hoverable
         loading={loading}
-        style={{ width: 260, marginTop: 45 }}
-        cover={<Image src={item.img_url} />}
-        actions={[price, <ShoppingCartOutlined key='purchase' style={{ fontSize: 26 }} onClick={cart.addCart} />]}
+        style={{ width: 260, marginTop: 20 }}
+        cover={<Image src={item.img_url[0]} onClick={(e) => e.stopPropagation()} />}
+        actions={[
+          price,
+          <ShoppingCartOutlined
+            key='purchase'
+            style={{ fontSize: 26 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              cart.addCart();
+            }}
+          />
+        ]}
       >
         <Meta title={item.name} description={description} />
       </Card>

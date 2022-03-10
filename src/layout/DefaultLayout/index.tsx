@@ -51,7 +51,7 @@ const DefaultLayout = (props: { children: ReactNode }) => {
   const { breadcrumbs } = useStore().breadcrumb;
 
   return (
-    <Layout hasSider={false}>
+    <Layout hasSider={false} style={{ maxWidth: 1280, margin: '0 auto' }}>
       <Header className='header'>
         <div className='logo' />
         <Menu theme='dark' mode='horizontal'>
@@ -62,7 +62,7 @@ const DefaultLayout = (props: { children: ReactNode }) => {
               </Menu.Item>
             ))}
           </>
-          <Menu.Item key='user' style={{ position: 'absolute', right: 100 }}>
+          <Menu.Item key='user' style={{ position: 'absolute', right: 400 }}>
             {<PortalLayout />}
           </Menu.Item>
         </Menu>

@@ -3,6 +3,7 @@ import breadcrumb from './Breadcrumb';
 import cart from './Cart';
 import comment from './Comment';
 import counter from './Counter';
+import detail from './Detail';
 import good from './Good';
 
 class RootStore {
@@ -11,6 +12,7 @@ class RootStore {
   comment = comment;
   good = good;
   cart = cart;
+  detail = detail;
 }
 
 const store = new RootStore();
