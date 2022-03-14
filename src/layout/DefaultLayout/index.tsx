@@ -31,11 +31,6 @@ const ALL_MENUS: IMenu[] = [
     link: ROUTE.Calc
   },
   {
-    title: '评论',
-    icon: <CommentOutlined />,
-    link: ROUTE.Comment
-  },
-  {
     title: '全屏',
     icon: <FullscreenOutlined />,
     link: ROUTE.FullScreen

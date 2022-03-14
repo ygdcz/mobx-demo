@@ -20,8 +20,8 @@ class Comment {
     return this.comments.length;
   }
 
-  getComment = () => {
-    getCommentList()
+  getComment = (goodId: number) => {
+    getCommentList(goodId)
       .then((res) => {
         message.success('获取评论成功');
         runInAction(() => {
@@ -32,8 +32,8 @@ class Comment {
         message.error('获取评论出错');
       });
   };
-  addComment = (comment: string) => {
-    const res = addComment(comment)
+  addComment = (goodId: number, comment: string) => {
+    const res = addComment(goodId, comment)
       .then((res) => {
         runInAction(() => {
           this.comments.unshift(res);

@@ -4,7 +4,6 @@ import { HashRouter, Link, Navigate, Outlet, Route, Routes, useLocation } from '
 import DefaultLayout from 'layout/DefaultLayout';
 import ROUTE from 'routes';
 const CalculatorPage = loadable(() => import('pages/Calculator'));
-const CommentPage = loadable(() => import('pages/Comment'));
 const FullScreenPage = loadable(() => import('pages/FullScreen'));
 const GoodPage = loadable(() => import('pages/Goods'));
 const DetailPage = loadable(() => import('pages/Detail'));
@@ -32,7 +31,6 @@ const Router = () => (
       >
         <Route path='/' element={<>home</>}></Route>
         <Route path='calc' element={<CalculatorPage />}></Route>
-        <Route path='comment' element={<CommentPage />}></Route>
         <Route path='fullscreen' element={<FullScreenPage />}></Route>
         <Route path='*' element={<Navigate to={'calc'} />}></Route>
         <Route path='good' element={<GoodPage />}></Route>

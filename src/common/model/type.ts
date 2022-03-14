@@ -7,6 +7,7 @@ export interface IComment {
   like: number;
   dislike: number;
   parentId: number | null;
+  goodId: number;
   extra: IComment[];
 }
 

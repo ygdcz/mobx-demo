@@ -7,15 +7,19 @@ const ACTION = {
   disliked: -1
 };
 
-export const getCommentList = async (): Promise<IComment[]> => {
-  const res = await $http.get<ISafeAny[]>('/comment');
+export const getCommentList = async (goodId: number): Promise<IComment[]> => {
+  const res = await $http.get<ISafeAny[]>('/comment', {
+    params: {
+      goodId
+    }
+  });
   return get(res, 'data', []).map((data) => ({
     ...data,
     status: data.status === 1 ? 'liked' : data.status === -1 ? 'disliked' : null
   }));
 };
 
-export const addComment = async (comment: string): Promise<IComment> => {
+export const addComment = async (goodId: number, comment: string): Promise<IComment> => {
   const newComment = {
     status: null,
     id: new Date().getTime(),
@@ -23,7 +27,8 @@ export const addComment = async (comment: string): Promise<IComment> => {
     time: new Date().toLocaleString(),
     comment,
     like: 0,
-    dislike: 0
+    dislike: 0,
+    goodId
   };
   const res = await $http.post<IComment>('/comment', newComment);
   return get(res, 'data');

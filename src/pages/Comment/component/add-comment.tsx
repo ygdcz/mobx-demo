@@ -28,7 +28,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }: IEditor) => (
   </>
 );
 
-const AddComment = () => {
+const AddComment = (props: { goodId: number }) => {
   const [submitting, setSubmitting] = useState<boolean | { delay?: number }>(false);
   const [value, setValue] = useState('');
   const { comment } = useStore();
@@ -42,7 +42,7 @@ const AddComment = () => {
     setSubmitting(true);
     setTimeout(() => {
       comment
-        .addComment(value)
+        .addComment(props.goodId, value)
         .then((res) => {
           setValue('');
           setSubmitting(false);

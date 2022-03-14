@@ -29,7 +29,7 @@ const GoodItem = ({ item }: IGoodItem) => {
     priceRest = '.' + formatPrice.split('.')[1];
   const price = (
     <span className={styles['price']} key='price'>
-      ¥{priceHead}
+      ¥ {priceHead}
       <span className={styles['price-rest']}>{priceRest}</span>
       <span className={styles['price-unit']}>/{item.unit}</span>
     </span>
@@ -50,17 +50,7 @@ const GoodItem = ({ item }: IGoodItem) => {
         loading={loading}
         style={{ width: 260, marginTop: 20 }}
         cover={<Image src={item.img_url[0]} onClick={(e) => e.stopPropagation()} />}
-        actions={[
-          price,
-          <ShoppingCartOutlined
-            key='purchase'
-            style={{ fontSize: 26 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              cart.addCart();
-            }}
-          />
-        ]}
+        actions={[price, <ShoppingCartOutlined key='purchase' style={{ fontSize: 26 }} />]}
       >
         <Meta title={item.name} description={description} />
       </Card>

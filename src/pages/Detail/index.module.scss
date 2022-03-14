@@ -5,12 +5,58 @@
     height: 300px;
 
     .image-container {
+      margin-left: 10px;
       width: 300px;
       height: 100%;
 
       :global {
         .ant-carousel {
           width: 100%;
+        }
+      }
+      .image {
+        position: relative;
+        .page {
+          width: 40px;
+          height: 25px;
+          border-radius: 20px;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background-color: rgba(242, 242, 242, 0.29);
+          padding: 2px;
+          color: rgb(53, 53, 53);
+          text-align: center;
+        }
+      }
+    }
+    .content {
+      margin-left: 10px;
+      width: 740px;
+      padding: 16px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 3px 6px 0 rgb(62 70 98 / 10%);
+
+      .name {
+        color: red;
+      }
+      .desc {
+      }
+      .price-and-comment {
+        display: flex;
+        justify-content: space-between;
+        .price {
+          color: red;
+          font-size: 20px;
+
+          .price-rest {
+            font-size: 16px;
+          }
+          .price-unit {
+            color: rgb(175, 173, 173);
+            font-size: 20px;
+          }
         }
       }
     }

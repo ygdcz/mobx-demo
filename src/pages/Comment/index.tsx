@@ -10,11 +10,11 @@ import { IComment } from 'common/model/type';
 import CommentItem from './component/comment-item';
 import AddComment from './component/add-comment';
 import useStore from 'store';
-function CommentPage() {
+function CommentPage(props: { goodId: number }) {
   const { comment } = useStore();
   useBreadcrumbs(['评论区']);
   useEffect(() => {
-    comment.getComment();
+    comment.getComment(props.goodId);
   }, [comment]);
 
   const generateComments = (list: IComment[]) => {
@@ -44,6 +44,7 @@ function CommentPage() {
 
   return (
     <>
+      购买后可以评价跳转到comment
       <List
         header={`${comment.Total}条评论`}
         pagination={{ pageSize: 3 }}
@@ -55,7 +56,7 @@ function CommentPage() {
         )}
         locale={{ emptyText: '暂无评论' }}
       />
-      <AddComment />
+      <AddComment goodId={props.goodId} />
     </>
   );
 }

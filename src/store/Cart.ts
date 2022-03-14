@@ -1,7 +1,9 @@
 import { makeAutoObservable, reaction, runInAction } from 'mobx';
+import { ICart } from 'pages/Detail/models';
+import { addCart } from 'pages/Detail/service';
 
 class Cart {
-  cart: { name: string }[] = [];
+  cart: ICart[] = [];
   constructor() {
     makeAutoObservable(
       this,
@@ -14,9 +16,11 @@ class Cart {
   get cartNum() {
     return this.cart.length;
   }
-  addCart() {
-    runInAction(() => {
-      this.cart.push({ name: 'abc' });
+  addCart(good: Partial<ICart>) {
+    addCart(good).then((res) => {
+      runInAction(() => {
+        this.cart.push(res);
+      });
     });
   }
 }
