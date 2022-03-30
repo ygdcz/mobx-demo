@@ -1,0 +1,26 @@
+.card-container {
+  :global {
+    .ant-card.ant-card-bordered {
+      padding: 16px;
+      width: 600px;
+
+      .ant-card-head {
+        background-image: linear-gradient(25deg, rgba(#b16060, 0.5), rgba(#fff, 0.7));
+
+        .ant-statistic {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .ant-card-body {
+        div {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

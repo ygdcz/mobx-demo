@@ -63,7 +63,8 @@
       "status": 1,
       "limitation": null,
       "unit": "盒",
-      "category": "Fruit"
+      "category": "Fruit",
+      "originPrice": 38
     },
     {
       "id": 2,
@@ -81,7 +82,8 @@
       "status": 1,
       "limitation": null,
       "unit": "盒",
-      "category": "Fruit"
+      "category": "Fruit",
+      "originPrice": 39.9
     },
     {
       "id": 3,
@@ -296,25 +298,70 @@
       "pId": 1
     },
     {
-      "id": 164862916609761,
-      "createTime": "1648629166316",
-      "totalAmount": "983.0",
+      "id": 164863658266485,
+      "createTime": "1648636582733",
+      "totalAmount": "69.2",
       "status": 1,
       "items": [
         {
-          "img_url": "https://img13.360buyimg.com/n7/jfs/t1/158024/12/23176/155825/61cd4480E9ff40a01/d285570e5f5bd147.jpg",
-          "name": "澳洲谷饲安格斯M3牛腱肉(不含腱子芯) 1kg谷饲270天 牛腱子肉 ",
-          "num": 1,
-          "price": 129
+          "img_url": "http://t13.baidu.com/it/u=1571329045,3167548469&fm=224&app=112&f=JPEG?w=500&h=500",
+          "name": "生牛乳巧克力奶",
+          "num": 2,
+          "price": 10.8
         },
         {
-          "img_url": "https://img10.360buyimg.com/n1/jfs/t1/85872/27/22868/335646/620f161fE35554886/36d0db765e2f53bf.jpg",
-          "name": "蒙大菲木桥系列长相思干白葡萄酒美国加州原瓶进口750ml*6瓶整箱装",
+          "img_url": "https://img12.360buyimg.com/n1/jfs/t1/107980/16/22826/86603/61ea8143Ecf78b464/19eb12a761ad3e30.jpg",
+          "name": "精选切片火腿50g*3袋",
           "num": 2,
-          "price": 427
+          "price": 23.8
         }
       ],
-      "pId": 4
+      "pId": 4,
+      "personInformation": {
+        "contact": {
+          "name": "何",
+          "sex": "female"
+        },
+        "time": "2022/3/30 18:45:00",
+        "address": {
+          "province": [
+            "shanghai",
+            "xuPu",
+            "street C"
+          ],
+          "place": "a小区b号304室"
+        }
+      }
+    },
+    {
+      "id": 164863698143451,
+      "createTime": "1648636981517",
+      "totalAmount": "78.0",
+      "status": 1,
+      "items": [
+        {
+          "img_url": "https://img12.360buyimg.com/n7/jfs/t1/112063/12/23098/143727/623d3117Ec55e5ab8/3763ccb421909af9.jpg",
+          "name": "海南金煌芒水仙芒 三亚大芒果 当季新鲜水果特大金黄应季时令生鲜 净重5斤【单果300-400g】",
+          "num": 2,
+          "price": 39
+        }
+      ],
+      "pId": 4,
+      "personInformation": {
+        "contact": {
+          "name": "何",
+          "sex": "female"
+        },
+        "time": "2022/3/30 23:45:59",
+        "address": {
+          "province": [
+            "shanghai",
+            "puDong",
+            "street A"
+          ],
+          "place": "a小区b号303室"
+        }
+      }
     }
   ],
   "person": [

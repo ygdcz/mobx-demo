@@ -35,6 +35,11 @@ const ALL_MENUS: IMenu[] = [
     title: '商品',
     icon: <ShopOutlined />,
     link: ROUTE.Good
+  },
+  {
+    title: '优惠活动',
+    icon: <NotificationOutlined />,
+    link: ROUTE.Promotion
   }
 ];
 

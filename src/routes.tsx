@@ -1,8 +1,7 @@
 const ROUTE = {
   Root: '/',
-  Calc: '/calc',
-  FullScreen: '/fullscreen',
-  Good: '/good'
+  Good: '/good',
+  Promotion: '/promotion'
 };
 
 export default ROUTE;

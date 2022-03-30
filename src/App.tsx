@@ -9,6 +9,7 @@ const GoodPage = loadable(() => import('pages/Goods'));
 const DetailPage = loadable(() => import('pages/Detail'));
 const OrderPage = loadable(() => import('pages/Order'));
 const HomePage = loadable(() => import('pages/Home'));
+const PromotionPage = loadable(() => import('pages/Promotion'));
 export interface IRoute {
   path: string;
   title: ReactElement;
@@ -68,6 +69,7 @@ const Router = () => (
         <Route path='good' element={<GoodPage />}></Route>
         <Route path='detail/:id' element={<DetailPage />}></Route>
         <Route path='order' element={<OrderPage />}></Route>
+        <Route path='promotion' element={<PromotionPage />}></Route>
         <Route path='404' element={<Page404 />}></Route>
         <Route path='403' element={<Page403 />}></Route>
       </Route>
