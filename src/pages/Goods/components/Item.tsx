@@ -13,7 +13,7 @@ interface IGoodItem {
 }
 
 const GoodItem = ({ item }: IGoodItem) => {
-  const { good, cart } = useStore();
+  const { good } = useStore();
   const { loading } = good;
   const navigate = useNavigate();
   const description = item.keyword ? (
@@ -24,6 +24,7 @@ const GoodItem = ({ item }: IGoodItem) => {
   ) : (
     <span className={styles['ellipsis']}>{item.description}</span>
   );
+
   const formatPrice = toString(item.price.toFixed(1)),
     priceHead = formatPrice.split('.')[0],
     priceRest = '.' + formatPrice.split('.')[1];
@@ -49,7 +50,16 @@ const GoodItem = ({ item }: IGoodItem) => {
         hoverable
         loading={loading}
         style={{ width: 260, marginTop: 20 }}
-        cover={<Image src={item.img_url[0]} onClick={(e) => e.stopPropagation()} />}
+        cover={
+          <Image
+            src={item.img_url[0]}
+            preview={false}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          />
+        }
         actions={[price, <ShoppingCartOutlined key='purchase' style={{ fontSize: 26 }} />]}
       >
         <Meta title={item.name} description={description} />

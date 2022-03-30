@@ -1,5 +1,6 @@
 export interface IComment {
   id: number;
+  pId: number;
   author: string;
   comment: string;
   time: string;

@@ -14,7 +14,7 @@ export const getDetail = async (id: string): Promise<IGood> => {
 
 export const addCart = async (good: Partial<ICart>): Promise<ICart> => {
   const newCartGood = {
-    id: new Date().getTime(),
+    id: good.id,
     create_time: new Date().toLocaleString(),
     price: good.price,
     num: good.num,
@@ -23,4 +23,20 @@ export const addCart = async (good: Partial<ICart>): Promise<ICart> => {
   };
   const res = await $http.post<ICart>('/cart', newCartGood);
   return get(res, 'data');
+};
+
+export const getCart = async () => {
+  const res = await $http.get<ICart[]>('/cart');
+  return get(res, 'data');
+};
+
+export const updateCart = async (id: number, params: Partial<ICart>) => {
+  const res = await $http.patch(`/cart/${id}`, params);
+  return res.data;
+};
+
+export const deleteCartItems = async (ids: number[]) => {
+  for (let i = 0; i < ids.length; i++) {
+    await $http.delete(`/cart/${ids[i]}`);
+  }
 };

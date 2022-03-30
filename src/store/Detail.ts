@@ -28,7 +28,6 @@ class Detail {
     getDetail(id).then((res) => {
       runInAction(() => {
         this.detail = res;
-        message.success('获取详细数据成功');
       });
     });
   }

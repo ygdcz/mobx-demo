@@ -1,0 +1,11 @@
+.cart-head {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 630px;
+  background-color: #fff;
+  z-index: 999;
+  height: 30px;
+  top: 20px;
+}

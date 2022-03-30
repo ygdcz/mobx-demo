@@ -6,7 +6,8 @@ import {
   CalculatorFilled,
   CommentOutlined,
   FullscreenOutlined,
-  ShopOutlined
+  ShopOutlined,
+  SkypeOutlined
 } from '@ant-design/icons';
 import React, { memo, ReactNode } from 'react';
 import { IRoute } from 'App';
@@ -26,14 +27,9 @@ interface IMenu {
 }
 const ALL_MENUS: IMenu[] = [
   {
-    title: '计算',
-    icon: <CalculatorFilled />,
-    link: ROUTE.Calc
-  },
-  {
-    title: '全屏',
-    icon: <FullscreenOutlined />,
-    link: ROUTE.FullScreen
+    title: '首页',
+    icon: <SkypeOutlined />,
+    link: ROUTE.Root
   },
   {
     title: '商品',

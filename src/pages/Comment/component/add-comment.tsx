@@ -62,7 +62,7 @@ const AddComment = (props: { goodId: number }) => {
         填写你的评论
       </Divider>
       <Comment
-        avatar={<Avatar src='https://joeschmoe.io/api/v1/random' alt='Han Solo' />}
+        avatar={<Avatar src='https://joeschmoe.io/api/v1/male/random' alt='Han Solo' />}
         content={<Editor onChange={onChange} onSubmit={onSubmit} submitting={submitting} value={value} />}
       />
     </>

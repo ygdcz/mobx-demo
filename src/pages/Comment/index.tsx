@@ -12,7 +12,7 @@ import AddComment from './component/add-comment';
 import useStore from 'store';
 function CommentPage(props: { goodId: number }) {
   const { comment } = useStore();
-  useBreadcrumbs(['评论区']);
+  useBreadcrumbs(['详情页']);
   useEffect(() => {
     comment.getComment(props.goodId);
   }, [comment]);

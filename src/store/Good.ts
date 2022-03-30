@@ -1,8 +1,6 @@
-import { message } from 'antd';
-import { reverse } from 'lodash-es';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { GOOD_CATEGORY, IGood } from 'pages/Goods/models';
-import { getGoods, getGoodsByCategory, getMoreGoods } from 'pages/Goods/service';
+import { getGoodLists, getGoods, getGoodsByCategory, getMoreGoods, searchGood } from 'pages/Goods/service';
 
 class Good {
   goods: IGood[] = [];
@@ -46,6 +44,22 @@ class Good {
         this.loading = false;
       })
       .catch((err) => (this.loading = false));
+  }
+
+  getGoodLists() {
+    getGoodLists().then((res) => {
+      runInAction(() => {
+        this.goods = res.data;
+      });
+    });
+  }
+  searchGood(value: string) {
+    searchGood(value).then((res) => {
+      runInAction(() => {
+        this.goods = res.data;
+        this.total = res.total;
+      });
+    });
   }
 }
 

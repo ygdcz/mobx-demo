@@ -1,15 +1,16 @@
-import { Button, Carousel, Divider, Drawer, Image, InputNumber, message, Tag } from 'antd';
+import { Button, Carousel, Descriptions, Divider, Drawer, Image, InputNumber, message, Tag } from 'antd';
 import Comment from 'pages/Comment';
 import { observer } from 'mobx-react-lite';
 import { IGood } from 'pages/Goods/models';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import styles from './index.module.scss';
 import useStore from 'store';
 import GoBack from 'common/components/go-back';
 import { TagColor } from 'constant';
 import { toString } from 'lodash-es';
 import { ShoppingCartOutlined } from '@ant-design/icons';
+import auth from 'store/Auth';
 interface IProps {
   good?: IGood;
 }
@@ -19,6 +20,7 @@ const Detail = (props: IProps) => {
   const { addCart } = cart;
   const [visible, setVisible] = useState(false);
   const [showComment, setShowComment] = useState(false);
+  const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const showDrawer = () => {
     setShowComment(true);
@@ -30,6 +32,7 @@ const Detail = (props: IProps) => {
 
   useEffect(() => {
     detail.getDetail(params.id!);
+    if (!goodDetail.name) navigate('/404');
   }, [params.id]);
 
   const formatPrice = toString(goodDetail.price.toFixed(1)),
@@ -45,9 +48,20 @@ const Detail = (props: IProps) => {
   );
 
   const onAddCart = () => {
-    cart.cart.findIndex((cart) => cart.id === goodDetail.id)
+    const params = {
+      img_url: goodDetail.img_url[0],
+      id: goodDetail.id,
+      name: goodDetail.name,
+      num,
+      price: goodDetail.price,
+      limitation: goodDetail.limitation
+    };
+
+    cart.cart.findIndex((cart) => {
+      return cart.id === goodDetail.id;
+    }) >= 0
       ? message.info('此商品您已添加过购物车了。')
-      : addCart({ img_url: goodDetail.img_url[0], id: goodDetail.id, name: goodDetail.name, num });
+      : addCart({ ...params });
   };
 
   return (
@@ -101,11 +115,33 @@ const Detail = (props: IProps) => {
             type='number'
             onChange={(v) => setNum(v)}
           />
-          <Button icon={<ShoppingCartOutlined />} danger onClick={onAddCart}>
+          <Button icon={<ShoppingCartOutlined />} danger onClick={onAddCart} disabled={auth.id === -1}>
             加入购物车
           </Button>
         </div>
       </main>
+      <footer>
+        <Descriptions title='商品 信息' bordered>
+          <Descriptions.Item label='名称' key={goodDetail.name}>
+            {goodDetail.name}
+          </Descriptions.Item>
+          <Descriptions.Item label='描述' key='description'>
+            {goodDetail.description?.join(',')}
+          </Descriptions.Item>
+          <Descriptions.Item label='标签' key='tag'>
+            {goodDetail.keyword || '-'}
+          </Descriptions.Item>
+          <Descriptions.Item label='购买限制' key='limitation'>
+            {goodDetail.limitation || '无'}
+          </Descriptions.Item>
+          <Descriptions.Item label='库存' key='num'>
+            {goodDetail.num}
+          </Descriptions.Item>
+          <Descriptions.Item label='单位' key='unit'>
+            {goodDetail.unit}
+          </Descriptions.Item>
+        </Descriptions>
+      </footer>
     </div>
   );
 };

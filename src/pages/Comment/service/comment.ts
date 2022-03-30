@@ -1,6 +1,7 @@
 import { $http } from 'common/http/http';
 import { IComment } from 'common/model/type';
 import { get } from 'lodash-es';
+import auth from 'store/Auth';
 
 const ACTION = {
   liked: 1,
@@ -23,12 +24,13 @@ export const addComment = async (goodId: number, comment: string): Promise<IComm
   const newComment = {
     status: null,
     id: new Date().getTime(),
-    author: 'random',
+    author: auth.username,
     time: new Date().toLocaleString(),
     comment,
     like: 0,
     dislike: 0,
-    goodId
+    goodId,
+    pId: auth.id
   };
   const res = await $http.post<IComment>('/comment', newComment);
   return get(res, 'data');

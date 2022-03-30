@@ -7,6 +7,7 @@ import { observer } from 'mobx-react';
 import useLike from 'hooks/like';
 import { IComment } from 'common/model/type';
 import useStore from 'store';
+import auth from 'store/Auth';
 interface IProps {
   data: IComment;
   children?: ReactNode;
@@ -21,6 +22,13 @@ function CommentItem(props: IProps) {
   const [value, setValue] = useState(comment);
   const [isUpdate, setIsUpdate] = useState(false);
   const { Paragraph } = Typography;
+  const isHidden = () => {
+    if (auth.id === 3) return false;
+    if (auth.id === data.pId) {
+      return false;
+    }
+    return true;
+  };
 
   const likeAndDislike = useCallback(() => {
     commentStore.updateLike(id, {
@@ -67,7 +75,7 @@ function CommentItem(props: IProps) {
       okText='确定'
       cancelText='取消'
     >
-      <Button type='link' key='comment-basic-delete'>
+      <Button type='link' key='comment-basic-delete' hidden={isHidden()}>
         删除
       </Button>
     </Popconfirm>,
@@ -95,6 +103,7 @@ function CommentItem(props: IProps) {
       <Button
         type='link'
         key='comment-basic-update'
+        hidden={isHidden()}
         onClick={() => {
           setIsUpdate(true);
         }}

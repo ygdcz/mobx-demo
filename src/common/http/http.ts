@@ -1,4 +1,5 @@
 import axios from 'axios';
+import auth from 'store/Auth';
 
 const $http = axios.create({
   baseURL: 'http://localhost:8888/',
