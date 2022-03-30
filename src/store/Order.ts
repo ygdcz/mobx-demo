@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { IOrder } from 'pages/Order/models';
-import { addOrder, getOrderById, getOrderList, updateOrder } from 'pages/Order/service';
+import { addOrder, deleteOrder, getOrderById, getOrderList, updateOrder } from 'pages/Order/service';
 
 class Order {
   orderList: IOrder[] = [];
@@ -37,6 +37,13 @@ class Order {
   }
   getOrderById(id: number) {
     return getOrderById(id).then((res) => res[0]);
+  }
+  deleteOrder(id: number) {
+    deleteOrder(id).then((res) => {
+      runInAction(() => {
+        this.orderList = this.orderList.filter((item) => item.id !== id);
+      });
+    });
   }
 }
 

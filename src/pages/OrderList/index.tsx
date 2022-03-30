@@ -1,4 +1,4 @@
-import { Button, Card, List, Space, Tag } from 'antd';
+import { Button, Card, Descriptions, Drawer, List, Popconfirm, Space, Tag, Tooltip } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import { observer } from 'mobx-react';
 import moment from 'moment';
@@ -36,23 +36,33 @@ function OrderList() {
             <List.Item key={index}>
               <List.Item.Meta
                 title={
-                  <Space>
-                    创建时间:
-                    <Tag color='#108ee9'>{moment(Number(item.createTime)).fromNow()}</Tag> 付款状态：
-                    {item.status ? <Tag color='green'>已付款</Tag> : <Tag color='red'>未付款</Tag>}
-                    {item.status ? (
-                      <></>
-                    ) : (
-                      <>
-                        <Button size='small' type='primary' style={{ marginLeft: 140 }} onClick={() => goToOrderPage(item.id)}>
-                          去付款
-                        </Button>
-                        <Button size='small' type='primary'>
-                          取消订单
-                        </Button>
-                      </>
-                    )}
-                  </Space>
+                  <>
+                    <Space>
+                      创建时间:
+                      <Tag color='#108ee9'>{moment(Number(item.createTime)).fromNow()}</Tag> 付款状态：
+                      {item.status ? <Tag color='green'>已付款</Tag> : <Tag color='red'>未付款</Tag>}
+                      {item.status ? (
+                        <>
+                          <Popconfirm title='您确定要删除这个订单吗？' onConfirm={() => order.deleteOrder(item.id)} cancelText='取消' okText='删除'>
+                            <Button type='primary' size='small'>
+                              删除
+                            </Button>
+                          </Popconfirm>
+                        </>
+                      ) : (
+                        <>
+                          <Button size='small' type='primary' style={{ marginLeft: 140 }} onClick={() => goToOrderPage(item.id)}>
+                            去付款
+                          </Button>
+                          <Popconfirm title='您确定要取消订单吗？' onConfirm={() => order.deleteOrder(item.id)} cancelText='再想想' okText='取消'>
+                            <Button size='small' type='primary'>
+                              取消订单
+                            </Button>
+                          </Popconfirm>
+                        </>
+                      )}
+                    </Space>
+                  </>
                 }
                 description={
                   <>
@@ -69,9 +79,31 @@ function OrderList() {
                         ></Meta>
                       </Card>
                     ))}
-                    <p>
-                      总价: ¥<span style={{ color: 'red', marginTop: 5 }}>{item.totalAmount}</span>
-                    </p>
+                    {item.status === 1 && (
+                      <Descriptions bordered style={{ width: 250, marginLeft: 30 }} layout='vertical' title='下单信息'>
+                        <Descriptions.Item label='总价' key='total' span={1}>
+                          {
+                            <p>
+                              ¥ <span>{item.totalAmount}</span>
+                            </p>
+                          }
+                        </Descriptions.Item>
+                        <Descriptions.Item label='联系人' key='contact' span={2}>
+                          {
+                            <p>
+                              {item.personInformation?.contact.name} {item.personInformation?.contact.sex === 'male' ? '先生' : '女士'}
+                            </p>
+                          }
+                        </Descriptions.Item>
+                        <Descriptions.Item label='送货时间' key='time' span={3}>
+                          {<Tooltip title={moment(item.personInformation?.time).fromNow()}>{item.personInformation?.time}</Tooltip>}
+                        </Descriptions.Item>
+                        <Descriptions.Item label='地址' key='address' span={3}>
+                          {item.personInformation?.address.province.join('/')}
+                          {item.personInformation?.address.place}
+                        </Descriptions.Item>
+                      </Descriptions>
+                    )}
                   </>
                 }
               />

@@ -55,21 +55,41 @@ function Order() {
     setStatus('completed');
   };
   function disabledDate(current: ISafeAny) {
-    // Can not select days before today and today
-    return current && current < moment().endOf('day');
+    const now = moment();
+    return current && (current < now.startOf('day') || current > now.add(6, 'months'));
+  }
+
+  function disabledHours() {
+    const HOURS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+    return HOURS.filter((hour) => hour < new Date().getHours());
+  }
+
+  function disabledMinutes() {
+    const MINUTES: number[] = [];
+    let i = 0;
+    while (MINUTES.length < 60) {
+      MINUTES.push(i++);
+    }
+    return MINUTES.filter((minute) => minute < new Date().getMinutes());
   }
 
   const onSubmit = () => {
-    form.validateFields().then((res) => {
-      console.log(res, state?.orderId);
+    form
+      .validateFields()
+      .then((res) => {
+        setLoading(false);
 
-      order.updateOrder(state?.orderId, {
-        personInformation: {
-          ...res,
-          time: res.time._d.toLocaleString()
-        }
+        order.updateOrder(state?.orderId, {
+          personInformation: {
+            ...res,
+            time: res.time._d.toLocaleString()
+          }
+        });
+      })
+      .finally(() => {
+        setLoading(true);
+        setIsConfirm(true);
       });
-    });
   };
   useEffect(() => {
     if (getNewData(good.goods).length === 0 || status === 'completed') return;
@@ -108,10 +128,10 @@ function Order() {
             <Form.Item label='联系人' style={{ height: 30 }}>
               <Input.Group compact>
                 <Form.Item name={['contact', 'name']}>
-                  <Input style={{ width: 50 }} />
+                  <Input style={{ width: 50 }} placeholder='姓' />
                 </Form.Item>
                 <Form.Item name={['contact', 'sex']} initialValue={person.currentAccount().information?.sex}>
-                  <Select>
+                  <Select style={{ width: 70 }} placeholder='性别'>
                     <Select.Option key='male' value='male'>
                       先生
                     </Select.Option>
@@ -126,13 +146,16 @@ function Order() {
               <DatePicker
                 style={{ width: 296 }}
                 placeholder='请选择送货时间'
-                showTime
+                showTime={{ defaultValue: moment('23:59:59', 'HH:mm:ss') }}
                 format='YYYY-MM-DD HH:mm:ss'
                 showNow
+                showToday
                 minuteStep={15}
                 showSecond={false}
                 onChange={(time, timeString) => setTime(timeString)}
                 disabledDate={disabledDate}
+                disabledHours={disabledHours}
+                disabledMinutes={disabledMinutes}
               />
             </Form.Item>
             <Form.Item label='地址' style={{ height: 30 }}>

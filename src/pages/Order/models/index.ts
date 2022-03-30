@@ -18,5 +18,6 @@ export interface IOrder {
   totalAmount: number;
   status: number; // 0 代付款 1 代发货
   items: Partial<ICart>[];
-  personInformation: IPersonInformation;
+  personInformation?: IPersonInformation;
+  pId: number;
 }
